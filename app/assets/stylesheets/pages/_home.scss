@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.content {
+  width: 100%;
+}
+
+.nft {
+  height: 360px;
+  width: 360px;
+  background-image: url('https://cdn.vox-cdn.com/thumbor/3j376QfTDxkCD5_vfYHOXcoIU2Q=/800x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22341197/doge.gif');
+  background-repeat: no-repeat
+}
+
+.main {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 600px;
+  width: 1000px;
+}
+
+.line {
+  height: 60%;
+  background-color: black;
+  width: 1px;
+}
+
+.about {
+  width: 360px
+}
