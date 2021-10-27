@@ -1,3 +1,11 @@
 <div class="container">
   <h1>All NFTs</h1>
+  <div class="row">
+    <% @nfts.each do |nft| %>
+      <div class="card">
+        <h1><%= nft.name %></h1>
+        <p><%= nft.description %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
