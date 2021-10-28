@@ -1,11 +1,13 @@
 <div class="container">
   <h1>All NFTs</h1>
-  <div class="row">
+  <div class="row justify-content-between">
     <% @nfts.each do |nft| %>
       <%= link_to nft_path(nft) do %>
-        <div class="card">
+        <div class="card" style="width:200px">
+          <img src="<%= nft.ext_url %>" alt="">
           <h1><%= nft.name %></h1>
           <p><%= nft.description %></p>
+          <%= link_to 'Delete', nft_path(nft), method: :delete %>
         </div>
       <% end %>
     <% end %>

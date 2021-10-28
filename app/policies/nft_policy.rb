@@ -8,4 +8,8 @@ class NftPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def destroy?
+    user == record.user
+  end
 end
