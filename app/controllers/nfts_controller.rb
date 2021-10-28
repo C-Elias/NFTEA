@@ -1,8 +1,7 @@
 class NftsController < ApplicationController
   before_action :get_nft, only: [:show]
   def index
-    @nfts = Nft.all
-    authorize @nfts
+    @nfts = policy_scope(Nft)
   end
 
   def show
