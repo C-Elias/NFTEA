@@ -1,5 +1,18 @@
 <div class="container">
-  <h1><%= @nft.name %></h1>
-  <p><%= @nft.description %></p>
-  <%= link_to 'Go back', nfts_path, class: 'btn btn-danger' %>
+  <%= link_to '< Back to NFTS', nfts_path %>
+  <div class="nft-card-show">
+    <div class="d-flex justify-content-between">
+      <%= link_to do %>
+        <p><%= @nft.user.email %></p>
+      <% end %>
+        <p>❤ <%= rand(0..100) %></p>
+      </div>
+    <div class="d-flex">
+      <img src="<%= @nft.ext_url %>" alt="" id="nft-foto-show">
+      <div class="text-wrapper">
+        <h1><%= @nft.name %></h1>
+        <p><%= @nft.description %></p>
+      </div>
+    </div>
+  </div>
 </div>
