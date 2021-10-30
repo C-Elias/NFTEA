@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>My Lists</h1>
+  <%=  %>
+  <div class="row justify-content-between col-12">
+    <% @lists.each do |list| %>
+        <div class="card col-3" style="width:200px; margin: 1rem;">
+          <h1><%= list.name %></h1>
+          <ul>
+            <li><%= list.bookmarks.first.nft.name %></li>
+          </ul>
+        </div>
+    <% end %>
+  </div>
+</div>
