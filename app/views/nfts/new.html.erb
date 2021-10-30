@@ -7,7 +7,7 @@
           <%= f.input :name, placeholder: '' %>
           <%= f.input :ext_url, label: 'Image URL', placeholder: 'http://img.co/image.png' %>
           <%= f.input :description, placeholder: '' %>
-          <%= f.input_field :for_sale, as: :boolean %>
+          <%= f.input :for_sale,     as: :radio_buttons %>
           <%= f.submit class: 'btn btn-primary' %>
         <% end %>
       </div>
