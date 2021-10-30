@@ -21,10 +21,36 @@
 
 .line {
   height: 60%;
-  background-color: black;
+  background-color: white;
   width: 1px;
 }
 
 .about {
   width: 360px
+}
+
+.about {
+  p {
+    color: white;
+  }
+}
+
+#title {
+color: white;
+}
+
+.slogan {
+  text-align: center;
+}
+
+.slogan{
+  p {
+    color: white;
+  }
+}
+
+.slogan {
+  h2 {
+    color: white;
+  }
 }
