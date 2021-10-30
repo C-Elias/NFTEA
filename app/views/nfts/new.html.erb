@@ -5,7 +5,7 @@
         <h3>Create a new NFT</h3>
         <%= simple_form_for @nft do |f| %>
           <%= f.input :name, placeholder: '' %>
-          <%= f.input :ext_url, placeholder: 'Image URL' %>
+          <%= f.input :ext_url, label: 'Image URL', placeholder: 'http://img.co/image.png' %>
           <%= f.input :description, placeholder: '' %>
           <%= f.input_field :for_sale, as: :boolean %>
           <%= f.submit class: 'btn btn-primary' %>
