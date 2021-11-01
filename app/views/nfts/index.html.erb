@@ -1,16 +1,32 @@
-<div class="container">
-  <h1>All NFTs</h1>
-  <%= link_to 'My lists', user_lists_path(user_id: current_user.id) %>
-  <div class="row justify-content-between">
-    <% @nfts.each do |nft| %>
-      <%= link_to nft_path(nft) do %>
-        <div class="card" style="width:200px">
-          <img src="<%= nft.ext_url %>" alt="">
-          <h1><%= nft.name %></h1>
-          <p><%= nft.description %></p>
-          <%= link_to 'Delete', nft_path(nft), method: :delete %>
-        </div>
+<h1 id="title">All NFT's</h1>
+<div class="nft-grid">
+  <% @nfts.each do |nft| %>
+  <div class="nft-card">
+    <div class="user">
+      <%= link_to user_path(nft.user) do %>
+        <p> <%= nft.user.email %></p>
       <% end %>
-    <% end %>
+    </div>
+    <img id="nft-preview" src="<%= nft.ext_url %>"alt="">
+    <div class="nft-info">
+      <%= link_to nft_path(nft) do %>
+        <h2><%= nft.name %></h2>
+      <% end %>
+      <div class="desc">
+        <p><%= nft.description[0..100] %>(...)</p>
+      </div>
+
+    </div>
+    <div class="bottom">
+      <%= link_to 'Buy NFT', nft_path(nft), class:"btn btn-outline-secondary" %>
+      <div>
+        <p>❤ <%= rand(0..100) %></p>
+        <div class="d-flex">
+          <i class="fab fa-ethereum"></i>
+          <%= rand(0.1..1).round(3) %>
+        </div>
+      </div>
+    </div>
   </div>
+  <% end %>
 </div>

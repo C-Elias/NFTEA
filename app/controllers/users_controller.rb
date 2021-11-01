@@ -2,22 +2,23 @@ class UsersController < ApplicationController
  before_action :set_user, only: [:show, :destroy]
 
   # GET /lists
-  def index
-    @users = user.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   # GET /users/1
   def show
+    authorize @user
   end
 
   # GET /users/new
   def new
-    @user = user.new
+    @user = User.new
   end
 
   # POST /users
   def create
-    @user = user.new(user_params)
+    @user = User.new(user_params)
 
     if @user.save
       redirect_to @user, notice: 'user was successfully created.'

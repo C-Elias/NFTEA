@@ -5,7 +5,17 @@
   border: 3px solid #26326b;
   align-content: center;
 }
+.price {
+  width: 100%;
+  justify-content: right;
+  margin-top: 50px;
+  margin-bottom: 50px
+}
 
+#eth {
+  font-size: 50px;
+  margin-right: 10px;
+}
 a {
   color: white;
 }
@@ -34,6 +44,14 @@ a {
 
 .text-wrapper {
   text-align: right;
-  margin-right: 50px;
   width: 50%;
+  margin-left: 40px;
+}
+
+.price {
+  display: flex;
+}
+
+.button {
+  margin-top: 20px;
 }
