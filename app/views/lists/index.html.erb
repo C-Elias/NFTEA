@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>My Lists</h1>
+  <%= link_to 'Add a List', new_user_list_path, class: 'btn btn-success' %>
+  <div class="row justify-content-between col-12">
+    <% @lists.each do |list| %>
+        <div class="card col-3" style="width:200px; margin: 1rem;">
+          <h1><%= list.name %></h1>
+          <%= link_to 'See Detais', user_list_path(list.user, list), class:'btn btn-success' %>
+          <%= link_to 'Delete', user_list_path(list.user, list), method: :delete, class:'btn btn-danger' %>
+        </div>
+    <% end %>
+  </div>
+</div>

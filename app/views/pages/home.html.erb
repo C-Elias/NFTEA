@@ -1,7 +1,12 @@
 <div class="content">
   <div class="banner">
+
     <h1 class="title">NFTea</h1>
+
   </div>
+  <div class="slogan">
+      <p>Your NFT marketplace</p>
+    </div>
 
   <div class="main">
     <div class="nft">
@@ -14,13 +19,9 @@
       <%= link_to 'Start Now', new_user_session_path, class:"btn btn-outline-secondary" %>
     </div>
   </div>
-  <div class="slogan">
-      <h2 >Buy & Sell NFT's</h2>
-      <p>Your NFT marketplace</p>
-    </div>
 </div>
-    <div id="map"
-     style="width: 50%; height: 300px; margin: 30px auto;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-     </div>
+<div id="map"
+   style="width: 50%; height: 300px; margin: 30px auto;"
+   data-markers="<%= @markers.to_json %>"
+   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+ </div>
