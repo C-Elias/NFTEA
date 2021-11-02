@@ -4,7 +4,7 @@
   <div class="nft-card">
     <div class="user">
       <%= link_to user_path(nft.user) do %>
-        <p> <%= nft.user.email %></p>
+        <h5> <%= nft.user.name %></h5>
       <% end %>
     </div>
     <img id="nft-preview" src="<%= nft.ext_url %>"alt="">

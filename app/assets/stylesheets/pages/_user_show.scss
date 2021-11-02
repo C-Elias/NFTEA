@@ -1,0 +1,78 @@
+.tabs {
+  display: flex;
+  justify-content: right;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+#username {
+  color: white;
+  font-size: 26px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 0.5px white;
+  height: 39px;
+  width: 950px;
+  margin: 30px auto;
+  padding-bottom: 45px;
+}
+
+.tabs {
+  i {
+    color: white;
+    margin-right: 7.5px;
+  }
+}
+
+.tab {
+  display: flex;
+  margin-left: 15px;
+  cursor: pointer;
+  align-items: center;
+  padding: 10px;
+}
+
+.tab:hover {
+  background-color: #26326b;
+  transition: 0.2s;
+  .tab {
+    h5 {
+      color: white;
+    }
+    i {
+      color: white;
+    }
+  }
+}
+
+.tab.active {
+  background-color: #26326b;
+  .tab {
+    h5 {
+      color: white;
+    }
+    i {
+      color: white;
+    }
+  }
+}
+
+.tab {
+  h5 {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+  }
+}
+
+.created-nft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}

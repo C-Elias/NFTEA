@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    authorize @user
+    @nfts = Nft.where(user: @user)
   end
 
   # GET /users/new
@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
+    authorize @user
   end
 
   # Only allow a trusted parameter "white user" through.

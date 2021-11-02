@@ -1,2 +1,50 @@
-<h1>testing</h1>
+<div class="container">
+  <%= link_to '< Back to NFTS', nfts_path %>
+  <div class="top">
+    <p id="username"><%= @user.name %></p>
+    <ul>
+    <div class="tabs">
+      <li data-tab-target="created-nfts">
+        <div class="tab">
+          <i class="fas fa-paint-roller"></i>
+          <h5>Created NFT's</h5>
+          <h5>(4)</h5>
+        </div>
+      </li>
+      <li data-tab-target="created-lists">
+        <div class="tab">
+          <i class="fas fa-clipboard-list"></i>
+          <h5>Lists</h5>
+          <h5>(2)</h5>
+        </div>
+      </li>
+    </ul>
+    </div>
+    <div class="active created-nft-grid">
+      <% @nfts.each do |nft| %>
+      <div class="nft-card">
+        <img id="nft-preview" src="<%= nft.ext_url %>"alt="">
+        <div class="nft-info">
+          <%= link_to nft_path(nft) do %>
+            <h2><%= nft.name %></h2>
+          <% end %>
+          <div class="desc">
+            <p><%= nft.description[0..100] %>(...)</p>
+          </div>
 
+        </div>
+        <div class="bottom">
+          <%= link_to 'Buy NFT', nft_path(nft), class:"btn btn-outline-secondary" %>
+          <div>
+            <p>❤ <%= rand(0..100) %></p>
+            <div class="d-flex">
+              <i class="fab fa-ethereum"></i>
+              <%= rand(0.1..1).round(3) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      </div>
+    </div>
+  </div>

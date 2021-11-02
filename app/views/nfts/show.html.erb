@@ -1,25 +1,39 @@
 <div class="container">
   <%= link_to '< Back to NFTS', nfts_path %>
+  <div class="nft-content">
   <div class="nft-card-show">
-    <div class="d-flex justify-content-between">
-      <%= link_to user_path(@nft.user_id) do %>
-        <h5><%= @nft.user.email %></h5>
-      <% end %>
+      <div class="d-flex justify-content-between p-3">
+        <h5><%= @nft.name %></h5>
         <h5>❤ <%= rand(0..100) %></h5>
       </div>
-    <div class="d-flex">
       <img src="<%= @nft.ext_url %>" alt="" id="nft-foto-show">
-      <div class="text-wrapper">
-        <div class="price">
+  </div>
+
+  <div class="nft-details-show">
+    <div class="d-flex justify-content-between p-3 border-bottom">
+      <h5>price</h5>
+      <div class="d-flex align-content-center">
         <i id="eth" class="fab fa-ethereum"></i>
-        <h1> <%= rand(0.1..1).round(3) %> </h1>
+        <h5> <%= rand(0.1..1).round(3) %> </h5>
       </div>
+    </div>
+    <div class="text-wrapper">
+      <div class="mt-4 mb-4">
         <h1><%= @nft.name %></h1>
+      </div>
+      <div style="height: 200px;">
         <p><%= @nft.description %></p>
-        <div class="button">
-          <%= link_to 'Buy NFT', nft_path(@nft), class:"btn btn-outline-secondary" %>
-        </div>
+      </div>
+      <div class="d-flex justify-content-around mt-4 mb-4">
+        <p>created by:</p>
+        <%= link_to user_path(@nft.user) do%>
+          <h5><%= @nft.user.name %></h5>
+        <% end %>
+      </div>
+      <div class="button">
+        <%= link_to 'Buy NFT', nft_path(@nft), class:"btn btn-outline-secondary" %>
       </div>
     </div>
   </div>
+
 </div>
