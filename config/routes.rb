@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :lists, only: [:new, :create, :show, :index, :destroy]
   end
+  resources :lists, only: [:show] do
+    resources :bookmarks, except: [:edit, :show, :update, :index]
+  end
 end

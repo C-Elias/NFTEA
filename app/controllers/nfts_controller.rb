@@ -2,6 +2,8 @@ class NftsController < ApplicationController
   before_action :get_nft, only: [:show, :destroy]
   def index
     @nfts = policy_scope(Nft)
+    @lists = List.where(user_id: current_user)
+    @bookmark = Bookmark.new
   end
 
   def show
