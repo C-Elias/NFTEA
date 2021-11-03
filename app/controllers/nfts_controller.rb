@@ -1,7 +1,12 @@
 class NftsController < ApplicationController
   before_action :get_nft, only: [:show, :destroy]
   def index
-    @nfts = policy_scope(Nft)
+    # add the search
+    if params[:query].present?
+      @nfts = Nft.search_by_name_and_description(params[:query])
+    else
+      @nfts = policy_scope(Nft)
+    end
   end
 
   def show
