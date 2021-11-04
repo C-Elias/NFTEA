@@ -13,6 +13,12 @@ li {
   font-size: 26px;
 }
 
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -51,19 +57,7 @@ li {
   }
 }
 
-.tab.active {
-  background-color: #26326b;
-  .tab {
-    h5 {
-      color: white;
-    }
-    i {
-      color: white;
-    }
-  }
-}
-
-.tab {
+.tabs {
   h5 {
     font-size: 16px;
     color: white;
@@ -71,8 +65,14 @@ li {
   }
 }
 
-.created-nft-grid {
+#created-nft-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+#created-list-grid {
+  display: none;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
