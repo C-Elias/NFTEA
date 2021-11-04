@@ -3,6 +3,10 @@
   justify-content: right;
 }
 
+.container {
+  margin: 30px auto;
+}
+
 li {
   text-decoration: none;
   list-style: none;
@@ -73,6 +77,20 @@ button {
 
 #created-list-grid {
   display: none;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
+}
+
+.list-card {
+  border-radius: 5px;
+  background-color: rgb(255, 249, 239);
+  h5 {
+    color: black;
+  }
+}
+
+.list-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
 }

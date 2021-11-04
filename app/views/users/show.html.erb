@@ -9,7 +9,7 @@
           <div id="created-nft-tab" class="tab">
             <i class="fas fa-paint-roller"></i>
             <h5>Created NFT's</h5>
-            <h5>(4)</h5>
+            <h5>(<%= @user.nfts.count %>)</h5>
           </div>
         </button>
       </li>
@@ -18,14 +18,14 @@
           <div id="created-list-tab" class="tab">
             <i class="fas fa-clipboard-list"></i>
             <h5>Lists</h5>
-            <h5>(2)</h5>
+            <h5>(<%= @user.lists.count %>)</h5>
           </div>
         </li>
       </button>
     </ul>
     </div>
     <div class="tab-content">
-      <div id="created-nft-grid" data-tab-content>
+      <div id="created-nft-grid">
         <% @nfts.each do |nft| %>
         <div class="nft-card">
           <img id="nft-preview" src="<%= nft.ext_url %>"alt="">
@@ -51,10 +51,18 @@
         </div>
         <% end %>
         </div>
-        <div id="created-list-grid" data-tab-content>
+        <div id="created-list-grid">
         <% @user.lists.each do |list| %>
         <div class="list-card">
-          <h5><%= list.name %></h5>
+          <img class="list-cover" src="<%= list.nfts[0].ext_url %>"alt="">
+          <div class="p-3">
+            <%= link_to user_list_path(list.user, list) do %>
+              <h5><%= list.name %></h5>
+            <% end %>
+            <div class="w-100 text-right">
+            <p>(<%= list.nfts.size %>) nfts</p>
+            </div>
+          </div>
         </div>
         <% end %>
       </div>
