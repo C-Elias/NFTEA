@@ -7,28 +7,29 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+puts "creating list 1"
+Bookmark.create!(list_id: 1, nft_id: 28)
+Bookmark.create!(list_id: 1, nft_id: 30)
+Bookmark.create!(list_id: 1, nft_id: 32)
+Bookmark.create!(list_id: 1, nft_id: 34)
+puts "created list 1"
 
-Nft.create(
-  name: 'Nft1',
-  description: 'Very good nft',
-  ext_url: 'https://i.picsum.photos/id/278/200/200.jpg?hmac=ttIZUII9b-qTWIpyIHChMPIA802dHskBJGR2EAa-Ywc',
-  user_id: 1
-)
-Nft.create(
-  name: 'Nft2',
-  description: 'Very nice nft',
-  ext_url: 'https://i.picsum.photos/id/305/200/200.jpg?hmac=GAm9fW477iVRZTOeQCdEqLVug4lTf8wnHHzLof8RbFQ',
-  user_id: 1
-)
-Nft.create(
-  name: 'Nft3',
-  description: 'Very average nft',
-  ext_url: 'https://i.picsum.photos/id/689/200/200.jpg?hmac=2KHWG2UlfLNAWC1jiBz-LQ7b-TMOB4bcW-FVvdQ_7a4',
-  user_id: 1
-)
-Nft.create(
-  name: 'Nft4',
-  description: 'Very bad nft',
-  ext_url: 'https://picsum.photos/200',
-  user_id: 1
-)
+puts "creating list 2"
+Bookmark.create!(list_id: 2, nft_id: 29)
+Bookmark.create!(list_id: 2, nft_id: 31)
+Bookmark.create!(list_id: 2, nft_id: 33)
+puts "created list 2"
+
+puts "creating list 3"
+Bookmark.create!(list_id: 3, nft_id: 22)
+Bookmark.create!(list_id: 3, nft_id: 24)
+Bookmark.create!(list_id: 3, nft_id: 29)
+Bookmark.create!(list_id: 3, nft_id: 23)
+puts "created list 3"
+
+puts "creating list 4"
+Bookmark.create!(list_id: 4, nft_id: 26)
+Bookmark.create!(list_id: 4, nft_id: 28)
+Bookmark.create!(list_id: 4, nft_id: 25)
+Bookmark.create!(list_id: 4, nft_id: 34)
+puts "created list 4"

@@ -1,13 +1,21 @@
 <div class="container">
-  <h1>My Lists</h1>
-  <%= link_to 'Add a List', new_user_list_path, class: 'btn btn-success' %>
-  <div class="row justify-content-between col-12">
+  <%= link_to '< Back to my profile', user_path(current_user) %>
+  <div class="top">
+    <h4>My lists:</h4>
+  </div>
+  <div id="my-list-grid">
     <% @lists.each do |list| %>
-        <div class="card col-3" style="width:200px; margin: 1rem;">
-          <h1><%= list.name %></h1>
-          <%= link_to 'See Detais', user_list_path(list.user, list), class:'btn btn-success' %>
-          <%= link_to 'Delete', user_list_path(list.user, list), method: :delete, class:'btn btn-danger' %>
+    <div class="list-card">
+      <img class="list-cover" src="<%= list.nfts[0].ext_url %>"alt="">
+      <div class="p-3">
+        <%= link_to user_list_path(list.user, list) do %>
+          <h5><%= list.name %></h5>
+        <% end %>
+        <div class="w-100 text-right">
+        <p>(<%= list.nfts.size %>) nfts</p>
         </div>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
