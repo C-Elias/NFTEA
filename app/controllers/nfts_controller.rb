@@ -2,6 +2,8 @@ class NftsController < ApplicationController
   before_action :get_nft, only: [:show, :destroy]
   def index
     # add the search
+    @lists = List.where(user_id: current_user)
+    @bookmark = Bookmark.new
     if params[:query].present?
       @nfts = Nft.search_by_name_and_description(params[:query])
     else
