@@ -17,11 +17,16 @@
         <div class="nil-cover"></div>
       <% end %>
       <div class="p-3">
-        <%= link_to user_list_path(list.user, list) do %>
-          <h5><%= list.name %></h5>
-        <% end %>
+        <div class="d-flex justify-content-between">
+          <%= link_to user_list_path(list.user, list) do %>
+            <h5><%= list.name %></h5>
+          <% end %>
+          <%= link_to user_list_path(list.user, list), method: :delete do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
         <div class="w-100 text-right">
-        <p>(<%= list.nfts.size %>) nfts</p>
+          <p>(<%= list.nfts.size %>) nfts</p>
         </div>
       </div>
     </div>
