@@ -27,13 +27,15 @@ p {
 
 .user {
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .user {
   h5 {
     margin: 0;
     padding: 0;
-    color: #26326b;
+    color: black;
   }
 }
 
