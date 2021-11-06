@@ -1,11 +1,39 @@
-<h1><%= @list.name %></h1>
-<%= link_to 'Add NFT', new_list_bookmark_path(@list), class: 'btn btn-outline-primary' %>
-<div class="row">
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="card" style="height: 200px; width: 200px">
-      <%= bookmark.nft.name %>
-      <%= image_tag bookmark.nft.ext_url %>
-      <%= link_to 'Remove', list_bookmark_path(@list, bookmark), method: :delete, class: 'btn btn-danger' %>
+<div class="container">
+
+  <%= link_to user_path(@list.user) do %>
+    <p>< Back to <%= @list.user.name %></p>
+  <% end %>
+  <div class="top">
+    <p id="username"><%= @list.user.name %></p>
+  </div>
+
+  <div id="created-nft-grid">
+    <% @list.nfts.each do |nft| %>
+    <div class="nft-card">
+    <div class="user">
+      <%= link_to user_path(nft.user) do %>
+        <h5> <%= nft.user.name %></h5>
+      <% end %>
     </div>
-<% end %>
+      <img id="nft-preview" src="<%= nft.ext_url %>"alt="">
+      <div class="nft-info">
+        <%= link_to nft_path(nft) do %>
+          <h2><%= nft.name %></h2>
+        <% end %>
+      <div class="desc">
+        <p><%= nft.description[0..100] %>(...)</p>
+      </div>
+    </div>
+    <div class="bottom">
+            <%= link_to 'Buy NFT', nft_path(nft), class:"btn btn-outline-secondary" %>
+            <div>
+              <p>❤ <%= rand(0..100) %></p>
+              <div class="d-flex">
+                <i class="fab fa-ethereum"></i>
+                <%= rand(0.1..1).round(3) %>
+              </div>
+            </div>
+          </div>
+    </div>
+  <% end %>
 </div>
