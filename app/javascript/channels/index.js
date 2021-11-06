@@ -3,3 +3,15 @@
 
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
+
+const hideModal = () => {
+  allForms = document.querySelectorAll('#new_bookmark')
+  allForms.forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      id = form.parentElement.parentElement.parentElement.parentElement.id;
+      $(`#${id}`).modal('hide');
+    });
+  });
+};
+
+hideModal();

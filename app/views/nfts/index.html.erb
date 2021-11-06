@@ -20,11 +20,11 @@
       <%= link_to user_path(nft.user) do %>
         <h5> <%= nft.user.name %></h5>
       <% end %>
-      <button type="button" data-toggle="modal" data-target="#exampleModal<%=nft.id%>">
+      <button type="button" data-toggle="modal" data-target="#modal<%=nft.id%>">
         <h2>+</h2>
       </button>
     </div>
-    <div class="modal fade" id="exampleModal<%=nft.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal<%=nft.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -35,7 +35,7 @@
           </div>
           <div class="modal-body">
             <%= simple_form_for [@bookmark] do |f| %>
-              <%= f.association :list, collection: List.where(user_id: current_user) %>
+              <%= f.association :list, collection: List.where(user_id: current_user), selected: :list[0] %>
               <%= f.hidden_field :nft_id, :value => nft.id %>
               <%= f.submit 'Add to list' %>
             <% end %>
