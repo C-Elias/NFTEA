@@ -1,20 +1,27 @@
+@mixin avatar($size) {
+    width: $size;
+    height: $size;
+    background-color: $brand-special;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+
+    .initials {
+      position: relative;
+      top: $size*0.25;
+      font-size: $size*0.5;
+      line-height: $size*0.5;
+      color: rgb(245, 137, 35);
+      font-family: $headers-font;
+      font-weight: bold;
+    }
+}
+
+.avatar-circle      { @include avatar(100px); }
+.avatar-circle-sm   { @include avatar(50px); }
+
 .avatar {
-  width: 40px;
+  width: 45px;
   border-radius: 50%;
-}
-.avatar-large {
-  width: 56px;
-  border-radius: 50%;
-}
-.avatar-bordered {
-  width: 40px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
-}
-.avatar-square {
-  width: 40px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
 }
