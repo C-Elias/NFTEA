@@ -21,11 +21,15 @@
         <%= link_to "Explore", nfts_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
-        <%= image_tag "https://lumiere-a.akamaihd.net/v1/images/character_themuppets_kermit_b77a431b.jpeg?region=0%2C0%2C450%2C450", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
-          <%= link_to "My Collections", user_lists_path(current_user), class: "dropdown-item" %>
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+       <div class="avatar-circle-sm">
+          <span class="initials">
+          <%= tag.span current_user.email[0,2].upcase, class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
+            <%= link_to "My Collections", user_lists_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </span>
+          </div>
         </div>
         <% else %>
           <li class="nav-item">
