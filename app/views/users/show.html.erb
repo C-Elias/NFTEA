@@ -54,7 +54,11 @@
         <div id="created-list-grid">
         <% @user.lists.each do |list| %>
         <div class="list-card">
-          <img class="list-cover" src="<%= list.nfts[0].ext_url %>"alt="">
+          <% if list.nfts[0] %>
+            <img class="list-cover" src="<%= list.nfts[0].ext_url %>"alt="">
+          <% else %>
+            <div class="nil-cover"></div>
+          <% end %>
           <div class="p-3">
             <%= link_to user_list_path(list.user, list) do %>
               <h5><%= list.name %></h5>

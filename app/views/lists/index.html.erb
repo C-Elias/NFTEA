@@ -1,18 +1,32 @@
 <div class="container">
+
   <%= link_to '< Back to my profile', user_path(current_user) %>
+
   <div class="top">
     <h4>My lists:</h4>
+    <%= link_to new_user_list_path(current_user) do %>
+      <h1>+</h1>
+    <% end %>
   </div>
   <div id="my-list-grid">
     <% @lists.each do |list| %>
     <div class="list-card">
-      <img class="list-cover" src="<%= list.nfts[0].ext_url %>"alt="">
+      <% if list.nfts[0] %>
+        <img class="list-cover" src="<%= list.nfts[0].ext_url %>"alt="">
+      <% else %>
+        <div class="nil-cover"></div>
+      <% end %>
       <div class="p-3">
-        <%= link_to user_list_path(list.user, list) do %>
-          <h5><%= list.name %></h5>
-        <% end %>
+        <div class="d-flex justify-content-between">
+          <%= link_to user_list_path(list.user, list) do %>
+            <h5><%= list.name %></h5>
+          <% end %>
+          <%= link_to user_list_path(list.user, list), method: :delete do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
         <div class="w-100 text-right">
-        <p>(<%= list.nfts.size %>) nfts</p>
+          <p>(<%= list.nfts.size %>) nfts</p>
         </div>
       </div>
     </div>
