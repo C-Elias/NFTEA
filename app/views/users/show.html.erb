@@ -1,5 +1,30 @@
 <div class="container">
-  <%= link_to '< Back to NFTS', nfts_path %>
+<div id="content" class="content p-0">
+    <div class="profile-header">
+        <div class="profile-header-cover"></div>
+        <div class="profile-header-content">
+            <div class="profile-header-img mb-4">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/62/Kermit_the_Frog.jpg" class="mb-4" alt="" />
+            </div>
+
+            <div class="profile-header-info">
+                <p id="username"><%= @user.name %></p>
+                <p class="m-b-sm">Kermi the Frog</p>
+                <a href="#" class="btn btn-xs btn-primary mb-2">Edit Profile</a>
+            </div>
+        </div>
+
+        <ul class="profile-header-tab nav nav-tabs">
+            <li class="nav-item"><a href="#profile-post" class="nav-link" data-toggle="tab"></a></li>
+            <li class="nav-item"><a href="#profile-about" class="nav-link" data-toggle="tab"></a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+  <%= link_to '< Back to NFTS', nfts_path  %>
   <div class="top">
     <p id="username"><%= @user.name %></p>
     <ul>
@@ -39,8 +64,8 @@
 
           </div>
           <div class="bottom">
-            <%= link_to 'Buy NFT', nft_path(nft), class:"btn btn-outline-secondary" %>
-            <div>
+            <%= link_to 'Buy NFT', nft_path(nft), class:"btn btn-outline-success" %>
+            <div id="pricing">
               <p>❤ <%= rand(0..100) %></p>
               <div class="d-flex">
                 <i class="fab fa-ethereum"></i>
