@@ -20,10 +20,10 @@
       <%= link_to user_path(nft.user) do %>
         <h5> <%= nft.user.name %></h5>
       <% end %>
+      <button type="button" data-toggle="modal" data-target="#exampleModal<%=nft.id%>">
+        <h2>+</h2>
+      </button>
     </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%=nft.id%>">
-      Add to
-    </button>
     <div class="modal fade" id="exampleModal<%=nft.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
